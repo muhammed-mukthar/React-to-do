@@ -4,7 +4,8 @@
 }
 
 body {
-  background-color: #020631;
+  /* background-color: #020631; */
+  background: rgb(34,193,195);
 }
 
 .app {

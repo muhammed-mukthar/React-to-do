@@ -4,6 +4,11 @@ import "./App.css";
 function App() {
   const [toDos, setTodos] = useState([]);
   const [toDo, setToDo] = useState("");
+  function removetask(obj){
+    setTodos(toDos.filter((todo)=>todo.id != obj.id))
+  
+    
+  }
   return (
     <div className="app">
       <div className="mainHeading">
@@ -54,13 +59,19 @@ function App() {
                 
               </div>
               <div className="right">
-                <i className="fas fa-times"></i>
+                <i className="fas fa-times" onClick={()=> removetask(obj)}></i>
               </div>
             </div>
           );
         })}
+        <br/>
+        <h1>Tasks done</h1>
         {toDos.map((obj)=>{if(obj.status){
-          return <h1>{obj.text}</h1>
+          return (
+            <div className="todo">
+          <h1 style={{color:"black",fontSize:"20px"}}>{obj.text}</h1>
+           </div>)
+         
         }
         return null
         
